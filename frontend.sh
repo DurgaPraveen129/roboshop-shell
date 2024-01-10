@@ -11,9 +11,6 @@ echo -e "${color}changing directories${nocolor}"
 cd /usr/share/nginx/html &>>/tmp/roboshop.log
 unzip /tmp/$component.zip &>>/tmp/roboshop.log
 
-echo -e "${color}configuring the repo${nocolor}"
-cp /home/centos/roboshop-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf
-
 echo -e "${color}finally installing${nocolor}"
 systemctl enable nginx &>>/tmp/roboshop.log
 systemctl restart nginx &>>/tmp/roboshop.log
