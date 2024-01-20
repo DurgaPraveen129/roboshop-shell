@@ -2,7 +2,7 @@ cp mongodb.repo /etc/yum.repos.d/mongo.repo
 
 dnf install mongodb-org -y
 
-systemctl enable mongodb
-systemctl start mongodb
+systemctl enable mongod
+systemctl start mongod
 
-systemctl restart mongodb
+systemctl restart mongod
