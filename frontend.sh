@@ -2,7 +2,7 @@ echo -e "${color}installing nginx${nocolor}"
 yum install nginx -y &>>/tmp/roboshop.log
 
 echo -e "${color}clearing app repos${nocolor}"
-rm -rf /usr/share/nginx/html/* &>>/tmp/roboshop.log
+rm -rf /usr/share/nginx/html/ &>>/tmp/roboshop.log
 
 echo -e "${color}copying directories${nocolor}"
 curl -o /tmp/$component.zip https://roboshop-artifacts.s3.amazonaws.com/$component.zip &>>/tmp/roboshop.log
