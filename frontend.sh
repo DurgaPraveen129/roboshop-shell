@@ -1,16 +1,19 @@
 echo -e "${color}installing nginx${nocolor}"
-yum install nginx -y &>>/tmp/roboshop.log
+dnf install nginx -y &>>/tmp/roboshop.log
 
-echo -e "${color}clearing app repos${nocolor}"
+echo -e "${color}installing nginx${nocolor}"
+systemctl enable nginx &>>/tmp/roboshop.log
+systemctl start nginx &>>/tmp/roboshop.log
+
+echo -e "${color}installing nginx${nocolor}"
 rm -rf /usr/share/nginx/html/ &>>/tmp/roboshop.log
 
-echo -e "${color}copying directories${nocolor}"
-curl -o /tmp/$component.zip https://roboshop-artifacts.s3.amazonaws.com/$component.zip &>>/tmp/roboshop.log
+echo -e "${color}installing nginx${nocolor}"
+curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>/tmp/roboshop.log
 
-echo -e "${color}changing directories${nocolor}"
+echo -e "${color}installing nginx${nocolor}"
 cd /usr/share/nginx/html &>>/tmp/roboshop.log
-unzip /tmp/$component.zip &>>/tmp/roboshop.log
+unzip /tmp/frontend.zip &>>/tmp/roboshop.log
 
-echo -e "${color}finally installing${nocolor}"
-systemctl enable nginx &>>/tmp/roboshop.log
+echo -e "${color}installing nginx${nocolor}"
 systemctl restart nginx &>>/tmp/roboshop.log
