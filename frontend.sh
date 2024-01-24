@@ -1,9 +1,5 @@
 echo -e "${color}installing nginx${nocolor}"
-dnf install nginx -y &>>/tmp/roboshop.log
-
-echo -e "${color}installing nginx${nocolor}"
-systemctl enable nginx &>>/tmp/roboshop.log
-systemctl start nginx &>>/tmp/roboshop.log
+yum install nginx -y &>>/tmp/roboshop.log
 
 echo -e "${color}installing nginx${nocolor}"
 rm -rf /usr/share/nginx/html/ &>>/tmp/roboshop.log
@@ -16,4 +12,5 @@ cd /usr/share/nginx/html &>>/tmp/roboshop.log
 unzip /tmp/frontend.zip &>>/tmp/roboshop.log
 
 echo -e "${color}installing nginx${nocolor}"
+systemctl enable nginx
 systemctl restart nginx &>>/tmp/roboshop.log
